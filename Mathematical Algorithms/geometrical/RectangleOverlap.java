@@ -23,6 +23,7 @@ public class RectangleOverlap {
 	}
 
 	boolean overlap(Rect a, Rect b) {
-		return !(a.ul.x > b.lr.x || a.ul.y < b.lr.y || a.lr.x < b.ul.x | a.lr.y > b.ul.y);
+		// return !(a.ul.x > b.lr.x || a.ul.y < b.lr.y || a.lr.x < b.ul.x | a.lr.y > b.ul.y);
+		return (a.ul.x <= b.lr.x && a.ul.y >= b.lr.y && a.lr.x >= b.ul.x && a.lr.y <= b.ul.y);
 	}
 }

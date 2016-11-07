@@ -4,14 +4,14 @@ public class DrawCircle {
 
 	public static void main(String[] args) {
 		drawCircle(10);
-		drawCircleNaive();
+		drawCircleBF();
 	}
 
-	static void drawCircleNaive() {
+	static void drawCircleBF() {
 		int r = 10;
-		for (int i = -r; i <= r; i++) {
-			for (int j = -r; j <= r; j++) {
-				if (Math.round(Math.sqrt(i * i + j * j)) == r)
+		for (int x = -r; x <= r; x++) {
+			for (int y = -r; y <= r; y++) {
+				if (Math.round(Math.sqrt(x * x + y * y)) == r)
 					System.out.print("*");
 				else
 					System.out.print(" ");
@@ -43,5 +43,29 @@ public class DrawCircle {
 			System.out.print("\n");
 		}
 	}
+	
+	void drawCircle(int r, int xCenter, int yCenter)
+	{
+	    double r2 = r * r;
+	    double x = 0;
+	    double y = r;
+	    while (y >= x)
+	    {
+	        y = Math.sqrt(r2 - (x * x)) + 0.5; // round up
+	        x++;
 
+	        SetPixel(xCenter + x, yCenter + y);
+	        SetPixel(xCenter + x, yCenter - y);
+	        SetPixel(xCenter - x, yCenter + y);
+	        SetPixel(xCenter - x, yCenter - y);
+	        SetPixel(xCenter + y, yCenter + x);
+	        SetPixel(xCenter + y, yCenter - x);
+	        SetPixel(xCenter - y, yCenter + x);
+	        SetPixel(xCenter - y, yCenter - x);
+	    }
+	}
+
+	private void SetPixel(double f, double d) { 
+		return;
+	}
 }
