@@ -1,4 +1,4 @@
-package bit.algorithms;
+
 
 public class Parity {
 	public static short parity(long x) {

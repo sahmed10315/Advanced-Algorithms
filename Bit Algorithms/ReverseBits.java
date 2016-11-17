@@ -1,4 +1,4 @@
-package bit.algorithms;
+
 
 public class ReverseBits {
 	private static long[] precomputedReverse = new long[(1 << 16)];

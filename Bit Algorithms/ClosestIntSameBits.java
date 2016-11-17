@@ -1,4 +1,4 @@
-package bit.algorithms;
+
 
 public class ClosestIntSameBits {
  

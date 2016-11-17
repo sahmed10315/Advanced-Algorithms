@@ -1,4 +1,4 @@
-package bit.algorithms;
+
 
 public class NextNumber {
 	public static int getNext(int n) {
