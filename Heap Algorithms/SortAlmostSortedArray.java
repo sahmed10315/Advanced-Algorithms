@@ -32,24 +32,5 @@ public class SortAlmostSortedArray {
 	}
 
 	public static void main(String[] args) {
-		Random r = new Random();
-		int n;
-		if (args.length == 1) {
-			n = Integer.parseInt(args[0]);
-		} else {
-			n = r.nextInt(100000) + 1;
-		}
-		System.out.println("n = " + n);
-		List<Integer> A = new ArrayList<>();
-		for (int i = 0; i < n; ++i) {
-			A.add(r.nextInt(999999) + 1);
-		}
-		sortApproximatelySortedData(A.iterator(), n - 1);
-		// Check result is sorted.
-		List<Integer> tmp = new ArrayList<>(result);
-		Collections.sort(tmp);
-		assert (result.equals(tmp));
-		// Check result contains stream entries.
-		assert (new TreeSet<>(result).equals(new TreeSet<>(A)));
 	}
 }

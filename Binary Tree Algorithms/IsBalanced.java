@@ -1,6 +1,53 @@
-
 public class IsBalanced {
+	/* Class containing left and right child of current
+	 node and key value*/
+	class Node {
+		int key;
+		Node left, right;
 
+		public Node(int item) {
+			key = item;
+			left = right = null;
+		}
+	}
+	/*
+	 * Compute the "height" of a tree -- the number of nodes along the longest
+	 * path from the root node down to the farthest leaf node.
+	 */
+	int height(Node root) {
+		if (root == null)
+			return 0;
+		else {
+			/* compute height of each subtree */
+			int lheight = height(root.left);
+			int rheight = height(root.right);
+
+			/* use the larger one */
+			if (lheight > rheight)
+				return (lheight + 1);
+			else
+				return (rheight + 1);
+		}
+	}
+	/* Returns true if binary tree with root as root is height-balanced */
+	boolean isBalanced(Node node) {
+		int lh; /* for height of left subtree */
+
+		int rh; /* for height of right subtree */
+
+		/* If tree is empty then return true */
+		if (node == null)
+			return true;
+
+		/* Get the height of left and right sub trees */
+		lh = height(node.left);
+		rh = height(node.right);
+
+		if (Math.abs(lh - rh) > 1)
+			return false;
+
+		return isBalanced(node.left) && isBalanced(node.right);
+	}
 	public static int checkHeight(TreeNode1 root) {
 		if (root == null) {
 			return -1;

@@ -6,7 +6,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class KLargest { 
+public class KLargestHeap {
+
 	private static class HeapEntry {
 		public Integer index;
 		public Integer value;

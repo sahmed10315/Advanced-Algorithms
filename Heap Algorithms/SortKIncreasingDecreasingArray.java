@@ -26,7 +26,8 @@ public class SortKIncreasingDecreasingArray {
 						: SubarrayType.INCREASING);
 			}
 		}
-		return MergeKSortedArrays.mergeKSortedArray(sortedSubarrays);
+	//	return MergeKSortedArrays.mergeKSortedArray(sortedSubarrays);
+		return A;
 	}
 
 	private static enum SubarrayType {
