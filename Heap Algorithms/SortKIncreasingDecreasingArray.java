@@ -35,25 +35,10 @@ public class SortKIncreasingDecreasingArray {
 	}
 
 	public static void main(String[] args) {
-		Random rnd = new Random();
-		for (int times = 0; times < 100; ++times) {
-			int n;
-			if (args.length == 2) {
-				n = Integer.parseInt(args[0]);
-			} else {
-				n = 1 + rnd.nextInt(10);
-			}
-
 			List<Integer> A = new ArrayList<>();
-			for (int i = 0; i < n; ++i) {
-				A.add(rnd.nextInt(999999));
-			}
-
-			List<Integer> Adup = new ArrayList<>(A);
+			A.add(57);
+			A.add(131);A.add(493);A.add(294);A.add(221);A.add(339);A.add(418);A.add(452);A.add(442);A.add(190);
 			List<Integer> ans = sortKIncreasingDecreasingArray(A);
-			assert (A.size() == ans.size());
-			Collections.sort(Adup);
-			assert (Adup.equals(ans));
 		}
-	}
+	
 }

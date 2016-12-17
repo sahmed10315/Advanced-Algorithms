@@ -19,7 +19,6 @@ ample city, if one exists?
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class GasUp {
 	private static class CityAndRemainingGas {
@@ -32,7 +31,7 @@ public class GasUp {
 		}
 	}
 
-	private static final int MPG = 20;
+	private static final int MPG = 1;
 
 	// gallons[i] is the amount of gas in city i, and distances[i] is the
 	// distance
@@ -51,35 +50,37 @@ public class GasUp {
 	}
 
 	public static void main(String[] args) {
-		Random gen = new Random();
-		for (int times = 0; times < 1000; ++times) {
-			int n;
-			if (args.length == 1) {
-				n = Integer.parseInt(args[0]);
-			} else {
-				n = gen.nextInt(10000) + 1;
-			}
-			List<Integer> gallons = new ArrayList<>(n);
-			int sum = 0;
-			for (int i = 0; i < n; ++i) {
-				int x = gen.nextInt(200) + 1;
-				sum += x;
-				gallons.add(x);
-			}
-			List<Integer> distances = new ArrayList<>(n);
-			sum -= n;
-			for (int i = 0; i < n; ++i) {
-				int x = 0;
-				if (sum > 0) {
-					x = gen.nextInt(sum) + 1;
-				}
-				distances.add(x + 1);
-				sum -= x;
-			}
-			distances.set(distances.size() - 1, distances.get(distances.size() - 1) + sum);
 
-			int c = findAmpleCity(gallons, distances);
-			System.out.println("start city = " + c);
-		}
+		List<Integer> gallons = new ArrayList<>();
+		gallons.add(300/20);
+		gallons.add(1000/20);
+		gallons.add(400/20);
+		gallons.add(300/20);
+		gallons.add(300/20);
+		gallons.add(300/20);
+		gallons.add(200/20);
+		gallons.add(1000/20);
+		gallons.add(400/20);
+		gallons.add(1100/20);
+		gallons.add(400/20);
+		gallons.add(600/20);
+		gallons.add(300/20);
+		List<Integer> distances = new ArrayList<>();
+
+		distances.add(15);
+		distances.add(15);
+		distances.add(15);
+		distances.add(20);
+		distances.add(25);
+		distances.add(45);
+		distances.add(10);
+		distances.add(45);
+		distances.add(65);
+		distances.add(15);
+		distances.add(30);
+		distances.add(25);
+		distances.add(35);
+		int c = findAmpleCity(gallons, distances);
+		System.out.println("start city = " + c);
 	}
 }
