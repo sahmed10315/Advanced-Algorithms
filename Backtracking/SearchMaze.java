@@ -1,7 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects; 
+import java.util.Objects;
 
 public class SearchMaze {
 	public static class Coordinate {
@@ -75,8 +75,8 @@ public class SearchMaze {
 	private static boolean isFeasible(Coordinate cur, List<List<Color>> maze) {
 		return cur.x >= 0 && cur.x < maze.size() && cur.y >= 0 && cur.y < maze.get(cur.x).size()
 				&& maze.get(cur.x).get(cur.y) == Color.WHITE;
-	} 
+	}
 
-	public static void main(String[] args) { 
+	public static void main(String[] args) {
 	}
 }
