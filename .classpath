@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Array Algorithms"/>
+	<classpathentry kind="src" path="Backtracking"/>
+	<classpathentry kind="src" path="Binary Search Tree Algorithms"/>
+	<classpathentry kind="src" path="Binary Tree Algorithms"/>
+	<classpathentry kind="src" path="Bit Algorithms"/>
+	<classpathentry kind="src" path="Divide And Conquer"/>
+	<classpathentry kind="src" path="Graph Algorithms"/>
+	<classpathentry kind="src" path="Greedy Algorithms"/>
+	<classpathentry kind="src" path="HashTable Algorithms"/>
+	<classpathentry kind="src" path="Heap Algorithms"/>
+	<classpathentry kind="src" path="LinkedList Algorithms"/>
+	<classpathentry kind="src" path="Mathematical Algorithms"/>
+	<classpathentry kind="src" path="Matrix Algorithms"/>
+	<classpathentry kind="src" path="Searching Algorithms"/>
+	<classpathentry kind="src" path="Sorting Algorithms"/>
+	<classpathentry kind="src" path="Stacks &amp; Queues Algorithms"/>
+	<classpathentry kind="src" path="String Algorithms"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
