@@ -2,6 +2,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 
 public class SearchMaze {
 	public static class Coordinate {
@@ -10,28 +11,6 @@ public class SearchMaze {
 		public Coordinate(int x, int y) {
 			this.x = x;
 			this.y = y;
-		}
-
-		@Override
-		public boolean equals(Object o) {
-			if (this == o) {
-				return true;
-			}
-
-			if (o == null || getClass() != o.getClass()) {
-				return false;
-			}
-
-			Coordinate that = (Coordinate) o;
-			if (x != that.x || y != that.y) {
-				return false;
-			}
-			return true;
-		}
-
-		@Override
-		public int hashCode() {
-			return Objects.hash(x, y);
 		}
 	}
 
@@ -75,8 +54,50 @@ public class SearchMaze {
 	private static boolean isFeasible(Coordinate cur, List<List<Color>> maze) {
 		return cur.x >= 0 && cur.x < maze.size() && cur.y >= 0 && cur.y < maze.get(cur.x).size()
 				&& maze.get(cur.x).get(cur.y) == Color.WHITE;
-	}
+	} 
 
 	public static void main(String[] args) {
+		Random r = new Random();
+		int n, m;
+		n = r.nextInt(30) + 1;
+		m = r.nextInt(30) + 1;
+
+		List<List<Color>> maze = new ArrayList<>(n);
+		for (int i = 0; i < n; ++i) {
+			maze.add(new ArrayList(m));
+			for (int j = 0; j < m; ++j) {
+				maze.get(i).add(Color.values()[r.nextInt(2)]);
+			}
+		}
+		List<Coordinate> white = new ArrayList<>();
+		for (int i = 0; i < n; ++i) {
+			for (int j = 0; j < m; ++j) {
+				if (maze.get(i).get(j) == Color.WHITE) {
+					white.add(new Coordinate(i, j));
+				}
+				System.out.print(maze.get(i).get(j) + " ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+		if (white.size() != 0) {
+			int start = r.nextInt(white.size());
+			int end = r.nextInt(white.size());
+			System.out.println(white.get(start));
+			System.out.println(white.get(end));
+			List<Coordinate> path = searchMaze(maze, white.get(start), white.get(end));
+			if (!path.isEmpty()) {
+				assert (white.get(start).equals(path.get(0)) && white.get(end).equals(path.get(path.size() - 1)));
+			}
+			Coordinate prev = null;
+			for (Coordinate curr : path) {
+				if (prev != null) {
+					assert (Math.abs(prev.x - curr.x) + Math.abs(prev.y - curr.y) == 1);
+				}
+				prev = curr;
+				System.out.println("(" + curr.x + "," + curr.y + ")");
+			}
+		}
+ 
 	}
 }
