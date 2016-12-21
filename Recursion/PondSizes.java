@@ -32,7 +32,12 @@ public class PondSizes {
 	}
 
 	public static void main(String[] args) {
-		int[][] land = { { 0, 2, 1, 0 }, { 0, 1, 0, 1 }, { 1, 1, 0, 1 }, { 0, 1, 0, 1 } };
+		int[][] land = { 
+				{ 0, 2, 1, 0 },
+				{ 0, 1, 0, 1 },
+				{ 1, 1, 0, 1 }, 
+				{ 0, 1, 0, 1 } 
+				};
 		ArrayList<Integer> sizes = computePondSizes(land);
 		for (int sz : sizes) {
 			System.out.println(sz);

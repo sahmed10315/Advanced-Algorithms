@@ -20,7 +20,7 @@ public class PermutationString {
 
 	/* Driver program to test above functions */
 	public static void main(String[] args) {
-		String str = "ABC";
+		String str = "AAA";
 		permute(str.toCharArray(), 0, str.length() - 1);
 	}
 }

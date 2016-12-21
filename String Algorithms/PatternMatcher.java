@@ -36,7 +36,7 @@ public class PatternMatcher {
 	}
 
 	public static void main(String[] args) {
-		String[][] tests = { { "ababb", "backbatbackbatbat" }, { "abab", "backsbatbackbats" },
+		String[][] tests = { { "ab", "backbat" }, { "abab", "backsbatbackbats" },
 				{ "aba", "backsbatbacksbat" } };
 		for (String[] test : tests) {
 			String pattern = test[0];
