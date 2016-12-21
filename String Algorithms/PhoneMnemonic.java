@@ -30,7 +30,7 @@ public class PhoneMnemonic {
  
 
 	public static void main(String[] args) { 
-		List<String> result = phoneMnemonic("3123513219");
+		List<String> result = phoneMnemonic("312");
 		for (String s : result) {
 			System.out.println(s);
 		} 
