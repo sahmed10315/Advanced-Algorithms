@@ -3,11 +3,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 import static java.lang.Math.min;
-
-/**
- * Created by tecso on 21/8/16.
- */
-// https://www.youtube.com/watch?v=yHsDLU3ZqNM
+ 
 public class JobSequencing implements Comparable<JobSequencing> {
 	char id;
 	int deadline, profit;
@@ -20,7 +16,6 @@ public class JobSequencing implements Comparable<JobSequencing> {
 
 	@Override
 	public int compareTo(JobSequencing o) {
-		// decreasing order
 		return o.profit - this.profit;
 	}
 

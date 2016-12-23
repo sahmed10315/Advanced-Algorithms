@@ -34,8 +34,8 @@ public class MinSum {
 
 	// Driver code
 	public static void main(String[] args) {
-		// int arr[] = { 6, 8, 4, 5, 2, 3 };
-		int arr[] = { 1, 2, 7, 8, 9 };
+		 int arr[] = { 6, 8, 4, 5, 2, 3 };
+		//int arr[] = { 1, 2, 7, 8, 9 };
 		System.out.println("The required sum is " + solve(arr));
 	}
 }
